@@ -1,11 +1,14 @@
 package mx.maic76.springboot.restpeliculas.models;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Table(name="peliculas")
 public class Pelicula {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String title;
     private int year;
 
