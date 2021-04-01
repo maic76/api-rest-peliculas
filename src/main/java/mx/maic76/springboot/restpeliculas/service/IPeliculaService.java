@@ -8,4 +8,6 @@ import java.util.List;
 public interface IPeliculaService {
 
     public List<Pelicula> findAll();
+
+    public void save(Pelicula);
 }

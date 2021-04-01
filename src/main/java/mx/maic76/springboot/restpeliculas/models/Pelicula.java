@@ -8,18 +8,18 @@ import java.util.Date;
 @Table(name="peliculas")
 public class Pelicula implements Serializable {
 
-    private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
-    @Basic(optional=false)
-    @Column(name="id")
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", updatable = false, nullable = false)
+    private long id;
 
-    @Column(name="name")
+    @Column( length = 100, nullable = false)
     private String title;
 
     private int year;
+
+    @Column(length = 500)
     private String synopsis;
 
     public String getSynopsis() {
@@ -70,8 +70,10 @@ public class Pelicula implements Serializable {
         this.year = year;
     }
 
-    @Id
+
     public Long getId() {
         return id;
     }
+
+    private static final long serialVersionUID = 1L;
 }
